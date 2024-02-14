@@ -3,6 +3,9 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# local repo files and folder to ignore
+develop/
+
 # C extensions
 *.so
 
