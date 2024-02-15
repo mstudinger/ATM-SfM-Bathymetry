@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE GranuleMetaDataFile SYSTEM "http://ecsinfo.gsfc.nasa.gov/ECSInfo/ecsmetadata/dtds/DPL/ECS/ScienceGranuleMetadata.dtd">
+<GranuleMetaDataFile>
+    <DTDVersion>1.0</DTDVersion>
+    <DataCenterId>NSIDC</DataCenterId>
+    <GranuleURMetaData>
+        <GranuleUR>SC:IOCAM0.001:183274585</GranuleUR>
+        <DbID>183274585</DbID>
+        <InsertTime>2020-07-10 14:45:43.664</InsertTime>
+        <LastUpdate>2020-07-10 14:45:43.664</LastUpdate>
+        <CollectionMetaData>
+            <ShortName>IOCAM0</ShortName>
+            <VersionID>001</VersionID>
+        </CollectionMetaData>
+        <DataFiles>
+            <DataFileContainer>
+                <DistributedFileName>IOCAM0_2019_GR_NASA_20190506-131614.9217.jpg</DistributedFileName>
+                <FileSize>3873409</FileSize>
+                <ChecksumType>MD5</ChecksumType>
+                <Checksum>574a59568ff5e77f7f7c76aaf6506dcc</Checksum>
+                <ChecksumOrigin>DPLIngst</ChecksumOrigin>
+            </DataFileContainer>
+        </DataFiles>
+        <ECSDataGranule>
+            <SizeMBECSDataGranule>3.69397</SizeMBECSDataGranule>
+            <LocalGranuleID>IOCAM0_2019_GR_NASA_20190506-131614.9217.jpg</LocalGranuleID>
+            <ProductionDateTime>2020-05-08 19:38:44.000</ProductionDateTime>
+            <LocalVersionID>001</LocalVersionID>
+        </ECSDataGranule>
+        <SingleDateTime>
+            <TimeofDay>13:16:14</TimeofDay>
+            <CalendarDate>2019-05-06</CalendarDate>
+        </SingleDateTime>
+        <SpatialDomainContainer>
+            <HorizontalSpatialDomainContainer>
+                <Point>
+                    <PointLongitude>-49.47813</PointLongitude>
+                    <PointLatitude>69.02686</PointLatitude>
+                </Point>
+            </HorizontalSpatialDomainContainer>
+        </SpatialDomainContainer>
+        <Platform>
+            <PlatformShortName>P-3B</PlatformShortName>
+            <Instrument>
+                <InstrumentShortName>CAMBOT</InstrumentShortName>
+                <Sensor>
+                    <SensorShortName>CAMBOT</SensorShortName>
+                </Sensor>
+            </Instrument>
+        </Platform>
+        <Campaign>
+            <CampaignShortName>2019_GR_NASA</CampaignShortName>
+        </Campaign>
+        <PSAs>
+            <PSA>
+                <PSAName>SIPSMetGenVersion</PSAName>
+                <PSAValue>2.5</PSAValue>
+            </PSA>
+            <PSA>
+                <PSAName>ThemeID</PSAName>
+                <PSAValue>2019_GR_NASA</PSAValue>
+            </PSA>
+            <PSA>
+                <PSAName>AircraftID</PSAName>
+                <PSAValue>N426NA</PSAValue>
+            </PSA>
+        </PSAs>
+        <BrowseProduct>
+            <BrowseGranuleId>UR:10:DsShESDTUR:UR:15:DsShSciServerUR:15:[NSIDC:DSSDSRV]:23:BR:Browse.001:183537225</BrowseGranuleId>
+        </BrowseProduct>
+    </GranuleURMetaData>
+</GranuleMetaDataFile>
+
+
