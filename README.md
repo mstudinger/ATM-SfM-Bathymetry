@@ -9,5 +9,5 @@ This repository contains tools for deriving supraglacial lake bathymetry from AT
 **Recommended resources:**
 * [Ames Stereo Pipeline](https://stereopipeline.readthedocs.io/en/latest/index.html)
 * [Ames Stereo Pipeline user group & support forum](https://groups.google.com/forum/#!forum/ames-stereo-pipeline-support)
-* [Jupyter-ready docker image with ASP pre-installed](https://github.com/uw-cryo/asp-binderfrom) from the [UW Terrain Analysis and Cryosphere Observation Lab](https://github.com/uw-cryo)
+* [Jupyter-ready docker image with ASP pre-installed](https://github.com/uw-cryo/asp-binder) from the [UW Terrain Analysis and Cryosphere Observation Lab](https://github.com/uw-cryo)
 * [Ames Stereo Pipeline](https://github.com/uw-cryo/asp_tutorials) tutorials from the [UW Terrain Analysis and Cryosphere Observation Lab](https://github.com/uw-cryo) 
