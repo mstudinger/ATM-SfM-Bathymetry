@@ -9,8 +9,8 @@ This repository contains tools for deriving supraglacial lake bathymetry from NA
 **Recommended resources:**
 * [Ames Stereo Pipeline user manual](https://stereopipeline.readthedocs.io/en/latest/index.html)
 * [Ames Stereo Pipeline user group & support forum](https://groups.google.com/forum/#!forum/ames-stereo-pipeline-support)
-* [Jupyter-ready docker image with ASP pre-installed](https://github.com/uw-cryo/asp-binder) from the [UW Terrain Analysis and Cryosphere Observation Lab](https://github.com/uw-cryo)
-* [Ames Stereo Pipeline tutorials](https://github.com/uw-cryo/asp_tutorials) from the [UW Terrain Analysis and Cryosphere Observation Lab](https://github.com/uw-cryo)
+* [Jupyter-ready docker image with ASP pre-installed](https://github.com/uw-cryo/asp-binder) from the [University of Washington Terrain Analysis and Cryosphere Observation Lab](https://github.com/uw-cryo)
+* [Ames Stereo Pipeline tutorials](https://github.com/uw-cryo/asp_tutorials) from the [University of Washington Terrain Analysis and Cryosphere Observation Lab](https://github.com/uw-cryo)
 
 **Publications relevant to the Structure from Motion (SfM) Bathymetry repository:**
 * Slocum R.K. *et al.*, (2019) [Guidelines for Bathymetric Mapping and Orthoimage Generation using sUAS and SfM, An Approach for Conducting Nearshore Coastal Mapping](https://repository.library.noaa.gov/view/noaa/22923)
