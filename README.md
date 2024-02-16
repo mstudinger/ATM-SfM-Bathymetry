@@ -7,7 +7,7 @@ This repository contains tools for deriving supraglacial lake bathymetry from AT
 * [Detection of supra-glacial lakes](https://github.com/mstudinger/ATM-SfM-Bathymetry/blob/main/Jupyter/CAMBOTv2_lake_detection_using_NDWI_and_Otsu_thresholding.ipynb) using surface classification based on natural-color imagery, NDWI<sub>ice</sub> and Otsu thresholding
 
 **Recommended resources:**
-* [Ames Stereo Pipeline](https://stereopipeline.readthedocs.io/en/latest/index.html)
+* [Ames Stereo Pipeline user manual](https://stereopipeline.readthedocs.io/en/latest/index.html)
 * [Ames Stereo Pipeline user group & support forum](https://groups.google.com/forum/#!forum/ames-stereo-pipeline-support)
 * [Jupyter-ready docker image with ASP pre-installed](https://github.com/uw-cryo/asp-binder) from the [UW Terrain Analysis and Cryosphere Observation Lab](https://github.com/uw-cryo)
-* [Ames Stereo Pipeline](https://github.com/uw-cryo/asp_tutorials) tutorials from the [UW Terrain Analysis and Cryosphere Observation Lab](https://github.com/uw-cryo) 
+* [Ames Stereo Pipeline tutorials](https://github.com/uw-cryo/asp_tutorials) from the [UW Terrain Analysis and Cryosphere Observation Lab](https://github.com/uw-cryo) 
