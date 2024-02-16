@@ -4,7 +4,7 @@ This repository contains tools for deriving supraglacial lake bathymetry from NA
 **Jupyter notebooks currently available in this repository (more to come):**
 * [Conversion of CAMBOTv2 L0 natural-color (RGB) images](https://github.com/mstudinger/ATM-SfM-Bathymetry/blob/main/Jupyter/CAMBOTv2_RGB_to_luminance.ipynb) to single-channel grayscale (luminance) images for use with the Ames Stereo Pipeline ([ASP](https://stereopipeline.readthedocs.io/en/latest/index.html)).
 * [Conversion of CAMBOTv2 GPS antenna positions](https://github.com/mstudinger/ATM-SfM-Bathymetry/blob/main/Jupyter/CAMBOTv2_convert_GPS_to_camera_pos.ipynb) to the camera's focal plane position for use with the Ames Stereo Pipeline ([ASP](https://stereopipeline.readthedocs.io/en/latest/index.html)).
-* [Detection of supra-glacial lakes](https://github.com/mstudinger/ATM-SfM-Bathymetry/blob/main/Jupyter/CAMBOTv2_lake_detection_using_NDWI_and_Otsu_thresholding.ipynb) using surface classification based on natural-color imagery, NDWI<sub>ice</sub> and Otsu thresholding
+* [Detection of supra-glacial lakes](https://github.com/mstudinger/ATM-SfM-Bathymetry/blob/main/Jupyter/CAMBOTv2_lake_detection_using_NDWI_and_Otsu_thresholding.ipynb) using surface classification based on natural-color imagery, NDWI<sub>ice</sub> and [Otsu](https://doi.org/10.1109/TSMC.1979.4310076) thresholding
 
 **Recommended resources:**
 * [Ames Stereo Pipeline user manual](https://stereopipeline.readthedocs.io/en/latest/index.html)
