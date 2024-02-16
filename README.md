@@ -10,4 +10,10 @@ This repository contains tools for deriving supraglacial lake bathymetry from NA
 * [Ames Stereo Pipeline user manual](https://stereopipeline.readthedocs.io/en/latest/index.html)
 * [Ames Stereo Pipeline user group & support forum](https://groups.google.com/forum/#!forum/ames-stereo-pipeline-support)
 * [Jupyter-ready docker image with ASP pre-installed](https://github.com/uw-cryo/asp-binder) from the [UW Terrain Analysis and Cryosphere Observation Lab](https://github.com/uw-cryo)
-* [Ames Stereo Pipeline tutorials](https://github.com/uw-cryo/asp_tutorials) from the [UW Terrain Analysis and Cryosphere Observation Lab](https://github.com/uw-cryo) 
+* [Ames Stereo Pipeline tutorials](https://github.com/uw-cryo/asp_tutorials) from the [UW Terrain Analysis and Cryosphere Observation Lab](https://github.com/uw-cryo)
+
+**Publications relevant to the Structure from Motion (SfM) Bathymetry repository:**
+* Slocum R.K. *et al.*, (2019) [Guidelines for Bathymetric Mapping and Orthoimage Generation using sUAS and SfM, An Approach for Conducting Nearshore Coastal Mapping](https://repository.library.noaa.gov/view/noaa/22923)
+* Beyer, R.A., Oleg Alexandrov, and Scott McMichael (2018). [The Ames Stereo Pipeline: NASA’s open source software for deriving and processing terrain data. Earth and Space Science, 5](https://doi.org/10.1029/2018EA000409).
+* Shean, D.E., *et. al*, (2016). An automated, open-source pipeline for mass production of digital elevation models (DEMs) from very high-resolution commercial stereo satellite imagery. [ISPRS Journal of Photogrammetry and Remote Sensing. 116](https://doi.org/10.1016/j.isprsjprs.2016.03.012).
+* Palaseanu-Lovejoy, M. *et. al*, (2016), SaTSeaD: Satellite Triangulated Sea Depth Open-Source Bathymetry Module for NASA Ames Stereo Pipeline, [Remote Sensing](https://www.mdpi.com/2072-4292/15/16/3950)
