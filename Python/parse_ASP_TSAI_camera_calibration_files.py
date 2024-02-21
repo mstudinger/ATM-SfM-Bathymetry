@@ -99,11 +99,3 @@ def parse_asp_tsai_file(
     return tsai_params
 
 
-#%% parse files
-
-tsai_params_asp = parse_asp_tsai_file(f_name_tsai_asp)
-tsai_params_agi = parse_asp_tsai_file(f_name_tsai_agi)
-
-#print(f'fu [pixels]: {tsai_params.fu:20.15f}')
-
-
