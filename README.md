@@ -8,6 +8,9 @@ This repository contains tools for deriving supraglacial lake bathymetry from NA
 * [Conversion of CAMBOTv2 GPS antenna positions](https://github.com/mstudinger/ATM-SfM-Bathymetry/blob/main/Jupyter/CAMBOTv2_convert_GPS_to_camera_pos.ipynb) to the camera's focal plane position for use with the Ames Stereo Pipeline ([ASP](https://stereopipeline.readthedocs.io/en/latest/index.html)).
 * [Detection of supra-glacial lakes](https://github.com/mstudinger/ATM-SfM-Bathymetry/blob/main/Jupyter/CAMBOTv2_lake_detection_using_NDWI_and_Otsu_thresholding.ipynb) using surface classification based on natural-color imagery, NDWI<sub>ice</sub> and [Otsu](https://doi.org/10.1109/TSMC.1979.4310076) thresholding
 
+**Python™ code currently available in this repository (more to come):**
+* [Parse ASP camera calibration files using the TSAI distortion model](https://github.com/mstudinger/ATM-SfM-Bathymetry/blob/main/Python/parse_ASP_TSAI_camera_calibration_files.py) and extract focal lengths $f_{u, v}$ as well as radial ($k_{1, 2}$) and tangential ($p_{1, 2}$) lens distortion parameters (see: [ASP frame camera models](https://stereopipeline.readthedocs.io/en/latest/pinholemodels.html)).
+
 **Recommended resources:**
 * [Ames Stereo Pipeline user manual](https://stereopipeline.readthedocs.io/en/latest/index.html)
 * [Ames Stereo Pipeline user group & support forum](https://groups.google.com/forum/#!forum/ames-stereo-pipeline-support)
