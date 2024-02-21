@@ -9,12 +9,12 @@ Created on Tue Feb 20, 2024
 import re
 
 def parse_asp_tsai_file(
-    f_name:str,   # ASP camera calibration file in TSAI format
+    f_name:str,   # ASP camera calibration file using the Tsai camera calibration technique
     ) -> object:  # a class containing the extracted parameters that were found
 
     """
-      Parse ASP camera clibration file in TSAI format, extract parameters 
-      and return a class with the extracted values that were found.
+      Parse ASP camera calibration file using the Tsai camera calibration technique,
+      extract parameters, and return a class with the extracted values that were found.
     """
     
     # read camera/lens calibration file for parsing
@@ -23,7 +23,7 @@ def parse_asp_tsai_file(
     lens_cal.close()
     
     # define a class TSAI_PARAMS for organizing the extracted lens calibration parameters
-    class TSAI_PARAMS():
+    class TsaiParams():
         def __init__(self):
             self.fu    = None
             self.fv    = None
@@ -35,8 +35,8 @@ def parse_asp_tsai_file(
             self.p2    = None
             self.pitch = None
     
-    # create return variable "tsai_params" as a TSAI_PARAMS class
-    tsai_params = TSAI_PARAMS()
+    # create return variable "tsai_params" as a TsaiParams class
+    tsai_params = TsaiParams()
     
     # the code for parsing the lens calibration files was inspired 
     # by C. Wayne Wright's (https://github.com/lidar532) function:
