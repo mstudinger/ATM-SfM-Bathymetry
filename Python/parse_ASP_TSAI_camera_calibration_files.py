@@ -22,7 +22,7 @@ def parse_asp_tsai_file(
     tsai_info = lens_cal.readlines() # reads the entire file
     lens_cal.close()
     
-    # define a class TSAI_PARAMS for organizing the extracted lens calibration parameters
+    # define a class TsaiParams for organizing the extracted lens calibration parameters
     class TsaiParams():
         def __init__(self):
             self.fu    = None
