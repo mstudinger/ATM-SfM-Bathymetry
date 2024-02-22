@@ -98,4 +98,40 @@ def parse_asp_tsai_file(
         
     return tsai_params
 
+#%% run module/function as script 
 
+if __name__ == '__main__':
+    
+    import os
+    # set input directory with ASP Tsai camera calibration file for parsing
+    f_dir_cal = r".." + os.sep + "data" + os.sep + "calibration"
+    # set Tsai input file name for parsing
+    f_name = f_dir_cal + os.sep + "CAMBOT_28mm_51500462_ASP_cal_pix_mod.tsai"
+
+    # execute function    
+    tsai_params_asp = parse_asp_tsai_file(f_name)
+    
+    # Prosilica GT 4905C camera pixel size is 5.5 μm × 5.5 μm
+    pixel_mm = 5.5 * 0.001
+    
+    # display some example values. center section headlines nicely
+    horz_line = '-----------------------------------------------------------------'
+    len_horz_line = len(horz_line)
+    
+    str_title = 'Prosilica GT 4905C camera with Zeiss 28 mm/F2 lens (S/N 51500462)'
+    str_title = str_title.center(len_horz_line, " ")
+    str_focal = 'Focal length estimates'
+    str_focal = str_focal.center(len_horz_line, " ")
+       
+    str_principal = 'Center/principal point estimates'
+    str_principal = str_principal.center(len_horz_line, " ")
+
+    print(str_title)
+    print(str_focal)
+    print(horz_line)
+    print(f'fu = {tsai_params_asp.fu*pixel_mm:5.2f} mm')
+    print(f'fv = {tsai_params_asp.fv*pixel_mm:5.2f} mm\n')
+    print(str_principal)
+    print(horz_line)
+    print(f'cu = {tsai_params_asp.cu:7.2f} pixels')
+    print(f'cv = {tsai_params_asp.cv:7.2f} pixels')
