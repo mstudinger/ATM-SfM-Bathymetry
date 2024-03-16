@@ -14,10 +14,13 @@ def parse_asp_tsai_file(
     ) -> object:  # a class containing the extracted parameters that were found
 
     """
-      Parse ASP camera calibration file using the Tsai camera calibration technique,
+      Parse ASP camera calibration/camera model file using the Tsai camera calibration technique,
       extract parameters, and return a class with the extracted values that were found.
       For a description of the ASP camera file formats see:
       https://stereopipeline.readthedocs.io/en/latest/pinholemodels.html#overview
+      
+      Note: for camera calibration files that have the extrinsics not yet defined
+      the extrinsic attributes in the output object will not be populated.
     """
     
     # read camera/lens calibration file for parsing
@@ -25,7 +28,7 @@ def parse_asp_tsai_file(
     tsai_info = lens_cal.readlines() # reads the entire file
     lens_cal.close()
     
-    # define a class TsaiParams for organizing the extracted lens calibration parameters
+    # define a class TsaiParams for organizing the extracted camera model parameters
     class TsaiParams():
         def __init__(self):
             self.fu      = None # focal length in horizontal pixel units
@@ -66,8 +69,7 @@ def parse_asp_tsai_file(
     rx_center = r"C = (?P<x>-*\d+\.\d*) (?P<y>-*\d+\.\d+) *(?P<z>-*\d*\.\d*)"
     # rotation matrix describing the camera’s absolute pose in the coordinate system
     rx_rot_mat = r"R = (?P<m1>-*\d+\.\d*) (?P<m2>-*\d+\.\d+) *(?P<m3>-*\d*\.\d*) (?P<m4>-*\d+\.\d*) (?P<m5>-*\d+\.\d+) *(?P<m6>-*\d*\.\d*) (?P<m7>-*\d+\.\d*) (?P<m8>-*\d+\.\d+) *(?P<m9>-*\d*\.\d*)"
-    
-    
+     
     for line in tsai_info:
         
         re_srch = re.search(rx_fu, line, flags=0)
@@ -123,7 +125,7 @@ def parse_asp_tsai_file(
             tsai_params.m7 = float(re_srch.group('m7'))
             tsai_params.m8 = float(re_srch.group('m8'))
             tsai_params.m9 = float(re_srch.group('m9'))        
-        
+         
     return tsai_params
 
 #%% run module/function as script 
@@ -133,15 +135,25 @@ if __name__ == '__main__':
     import os
     # set input directory with ASP Tsai camera calibration file for parsing
     f_dir_cal = r".." + os.sep + "data" + os.sep + "calibration"
+    f_dir_tsai = r".." + os.sep + "data" + os.sep + "example_files"
     # set Tsai input file name for parsing
-    f_name = f_dir_cal + os.sep + "CAMBOT_28mm_51500462_ASP_cal_pix_mod.tsai"
-    
-    f_name = r"\\wsl.localhost\Ubuntu\home\mstuding\SfM\20190506\IOCAM0_2019_GR_NASA_20190506-131611.4217.tsai"
-
+    # this example file has the extrinsics not yet defined
+    # f_name = f_dir_cal + os.sep + "CAMBOT_28mm_51500462_ASP_cal_pix_mod.tsai"
+    # this camera model was created with ortho2pinhole and includes extrincs/camera pose 
+    f_name = f_dir_tsai + os.sep +"IOCAM0_2019_GR_NASA_20190506-131611.4217.tsai"    
+    f_name_short = os.path.basename(f_name)
 
     # execute function    
     tsai_params_asp = parse_asp_tsai_file(f_name)
     
+    if hasattr(tsai_params_asp, 'x') & hasattr(tsai_params_asp, 'm1'):
+        if (abs(tsai_params_asp.x) > 360.0): 
+            print(f'\n{f_name_short:s}: found camera pose in ECEF coordinates\n')
+        else:
+            print(f'\n{f_name_short:s}: found camera pose in geo coordinates\n')
+    else:
+        print(f'\n{f_name_short:s}: camera pose is undefined.\n')
+
     # Prosilica GT 4905C camera pixel size is 5.5 μm × 5.5 μm
     pixel_mm = 5.5 * 0.001
     
