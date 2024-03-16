@@ -2,7 +2,7 @@
 """
 Created on Tue Feb 20, 2024
 
-@author: Michael Studinger, NASA Goddard Space Flight Center
+@author: Michael Studinger, NASA - Goddard Space Flight Center
 """
 
 # import required modules
@@ -25,15 +25,17 @@ def parse_asp_tsai_file(
     # define a class TsaiParams for organizing the extracted lens calibration parameters
     class TsaiParams():
         def __init__(self):
-            self.fu    = None
-            self.fv    = None
-            self.cu    = None
-            self.cv    = None
-            self.k1    = None
-            self.k2    = None
-            self.p1    = None
-            self.p2    = None
-            self.pitch = None
+            self.fu      = None # focal length in horizontal pixel units
+            self.fv      = None # focal length in vertical pixel units
+            self.cu      = None # horizontal offset of the principal point of the camera in the image plane in pixel units, from 0,0
+            self.cv      = None # vertical offset of the principal point of the camera in the image plane in pixel units, from 0,0
+            self.k1      = None # radial distortion parameter 1
+            self.k2      = None # radial distortion parameter 2
+            self.p1      = None # tangential distortion parameter 1
+            self.p2      = None # tangential distortion parameter 2
+            self.pitch   = None # the size of each pixel in pixles (1.l0) or millimeters or meters
+            self.center  = None # location of the camera center, usually in the geocentric coordinate system (GCC/ECEF)
+            self.rot_mat = None # rotation matrix describing the camera’s absolute pose in the coordinate system
     
     # create return variable "tsai_params" as a TsaiParams class
     tsai_params = TsaiParams()
@@ -56,7 +58,12 @@ def parse_asp_tsai_file(
     rx_p2 = r"p2 = (?P<p2>.\d*\.*\d*)"
     
     # read pitch value. if pitch = 1.0 units for focal length etc. are in pixels
-    rx_pitch = r"pitch = (?P<pitch>.\d*\.*\d*)"  
+    rx_pitch = r"pitch = (?P<pitch>.\d*\.*\d*)"
+    # location of camera center
+    rx_center = r"C = (?P<x>-*\d+\.\d*) (?P<y>-*\d+\.\d+) *(?P<z>-*\d*\.\d*)"
+    #rot_mat 
+    rx_rot_mat = r"R = (?P<m1>-*\d+\.\d*) (?P<m2>-*\d+\.\d+) *(?P<m3>-*\d*\.\d*) (?P<m4>-*\d+\.\d*) (?P<m5>-*\d+\.\d+) *(?P<m6>-*\d*\.\d*) (?P<m7>-*\d+\.\d*) (?P<m8>-*\d+\.\d+) *(?P<m9>-*\d*\.\d*)"
+    
     
     for line in tsai_info:
         
@@ -96,6 +103,24 @@ def parse_asp_tsai_file(
         if re_srch:
             tsai_params.pitch = float(re_srch.group('pitch'))
         
+        re_srch = re.search(rx_center, line, flags=0)
+        if re_srch:
+            tsai_params.x = float(re_srch.group('x'))
+            tsai_params.y = float(re_srch.group('y'))
+            tsai_params.z = float(re_srch.group('z'))
+
+        re_srch = re.search(rx_rot_mat, line, flags=0)
+        if re_srch:            
+            tsai_params.m1 = float(re_srch.group('m1'))
+            tsai_params.m2 = float(re_srch.group('m2'))
+            tsai_params.m3 = float(re_srch.group('m3'))
+            tsai_params.m4 = float(re_srch.group('m4'))
+            tsai_params.m5 = float(re_srch.group('m5'))
+            tsai_params.m6 = float(re_srch.group('m6'))
+            tsai_params.m7 = float(re_srch.group('m7'))
+            tsai_params.m8 = float(re_srch.group('m8'))
+            tsai_params.m9 = float(re_srch.group('m9'))        
+        
     return tsai_params
 
 #%% run module/function as script 
@@ -107,6 +132,9 @@ if __name__ == '__main__':
     f_dir_cal = r".." + os.sep + "data" + os.sep + "calibration"
     # set Tsai input file name for parsing
     f_name = f_dir_cal + os.sep + "CAMBOT_28mm_51500462_ASP_cal_pix_mod.tsai"
+    
+    f_name = r"\\wsl.localhost\Ubuntu\home\mstuding\SfM\20190506\IOCAM0_2019_GR_NASA_20190506-131611.4217.tsai"
+
 
     # execute function    
     tsai_params_asp = parse_asp_tsai_file(f_name)
