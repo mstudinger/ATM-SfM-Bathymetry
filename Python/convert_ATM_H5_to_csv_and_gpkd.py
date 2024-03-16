@@ -58,7 +58,7 @@ def convert_atm_H5_to_csv_and_gpkg(
             atm_data[:,0] = atm_data[:,0] % 360
         else:
             import os
-            os.sys.exit("Parameter ANLGE_WRAP must must either be 180 or 360. Abort.")
+            os.sys.exit("Parameter ANGLE_WRAP must must either be 180 or 360. Abort.")
             
         tic = time.perf_counter()    
         np.savetxt(f_name_csv, X = atm_data, header = header_str, comments='', delimiter=",", fmt = ['%14.9f', '%14.9f' , '%10.4f', '%6.0f'])
