@@ -13,7 +13,7 @@ __*The repository is within the spirit of NASA's Transform to Open Science ([TOP
 **Python™ code currently available in this repository (more to come):**
 * [Parse ASP camera calibration files using the TSAI distortion model](https://github.com/mstudinger/ATM-SfM-Bathymetry/blob/main/Python/parse_ASP_TSAI_camera_calibration_files.py) and extract intrinsic parameters, such as focal lengths $f_{u, v}$ , radial ($k_{1, 2}$) and tangential  lens distortion parameters ($p_{1, 2}$) , as well as extrinsic parameters such as camera pose (see: [ASP frame camera models](https://stereopipeline.readthedocs.io/en/latest/pinholemodels.html)).
 * [Convert ASP residual output files to GeoPackage (GPKG) for plotting with GIS packages](https://github.com/mstudinger/ATM-SfM-Bathymetry/blob/main/Python/convert_asp_residual_output_to_gpkg.py)
-* [Convert_ATM_HDF5 lidar point clouds](https://github.com/mstudinger/ATM-SfM-Bathymetry/blob/main/Python/convert_ATM_H5_to_csv_and_gpkd.py) convert ATM HDF5 lidar point clouds to ASCII CSV or GeoPackage (GPKG) for plotting with GIS packages. 
+* [Convert ATM HDF5 lidar point clouds](https://github.com/mstudinger/ATM-SfM-Bathymetry/blob/main/Python/convert_ATM_H5_to_csv_and_gpkd.py): convert ATM HDF5 lidar point clouds to ASCII CSV or GeoPackage (GPKG) for plotting with GIS packages. 
 ___
 
 **Recommended resources:**
