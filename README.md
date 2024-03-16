@@ -11,7 +11,7 @@ __*The repository is within the spirit of NASA's Transform to Open Science ([TOP
 * [Known challenges for SfM for supraglacial hydrology](https://github.com/mstudinger/ATM-SfM-Bathymetry/blob/main/Jupyter/SfM_supraglacial_hydrology_known_challenges.ipynb): Notebook illustrating known challenges for SfM for supraglacial hydrology, such as caustic and lake ice cover.
 
 **Python™ code currently available in this repository (more to come):**
-* [Parse ASP camera calibration files using the TSAI distortion model](https://github.com/mstudinger/ATM-SfM-Bathymetry/blob/main/Python/parse_ASP_TSAI_camera_calibration_files.py) and extract focal lengths $f_{u, v}$ as well as radial ($k_{1, 2}$) and tangential ($p_{1, 2}$) lens distortion parameters (see: [ASP frame camera models](https://stereopipeline.readthedocs.io/en/latest/pinholemodels.html)).
+* [Parse ASP camera calibration files using the TSAI distortion model](https://github.com/mstudinger/ATM-SfM-Bathymetry/blob/main/Python/parse_ASP_TSAI_camera_calibration_files.py) and extract intrinsic parameters such as focal lengths $f_{u, v}$, radial ($k_{1, 2}$) and tangential ($p_{1, 2}$) lens distortion parameters as well as extrinsic parameters such as camera pose (see: [ASP frame camera models](https://stereopipeline.readthedocs.io/en/latest/pinholemodels.html)).
 * [Convert ASP residual output files to GeoPackage (GPKG) for plotting with GIS packages](https://github.com/mstudinger/ATM-SfM-Bathymetry/blob/main/Python/convert_asp_residual_output_to_gpkg.py)
 ___
 
