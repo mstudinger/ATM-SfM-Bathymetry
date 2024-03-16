@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-Created on Tue Feb 20, 2024
+Created on Tue Feb 20, 2024.
+Updated on Fri Mar 15, 2024 to include extrinsics.
 
 @author: Michael Studinger, NASA - Goddard Space Flight Center
 """
@@ -15,6 +16,8 @@ def parse_asp_tsai_file(
     """
       Parse ASP camera calibration file using the Tsai camera calibration technique,
       extract parameters, and return a class with the extracted values that were found.
+      For a description of the ASP camera file formats see:
+      https://stereopipeline.readthedocs.io/en/latest/pinholemodels.html#overview
     """
     
     # read camera/lens calibration file for parsing
@@ -59,9 +62,9 @@ def parse_asp_tsai_file(
     
     # read pitch value. if pitch = 1.0 units for focal length etc. are in pixels
     rx_pitch = r"pitch = (?P<pitch>.\d*\.*\d*)"
-    # location of camera center
+    # location of camera center, usually in the geocentric coordinate system (GCC/ECEF)
     rx_center = r"C = (?P<x>-*\d+\.\d*) (?P<y>-*\d+\.\d+) *(?P<z>-*\d*\.\d*)"
-    #rot_mat 
+    # rotation matrix describing the camera’s absolute pose in the coordinate system
     rx_rot_mat = r"R = (?P<m1>-*\d+\.\d*) (?P<m2>-*\d+\.\d+) *(?P<m3>-*\d*\.\d*) (?P<m4>-*\d+\.\d*) (?P<m5>-*\d+\.\d+) *(?P<m6>-*\d*\.\d*) (?P<m7>-*\d+\.\d*) (?P<m8>-*\d+\.\d+) *(?P<m9>-*\d*\.\d*)"
     
     
