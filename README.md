@@ -12,7 +12,7 @@ __*The repository is within the spirit of NASA's Transform to Open Science ([TOP
 
 **Python™ code currently available in this repository (more to come):**
 * [Parse ASP camera calibration files using the TSAI distortion model](https://github.com/mstudinger/ATM-SfM-Bathymetry/blob/main/Python/parse_ASP_TSAI_camera_calibration_files.py) and extract focal lengths $f_{u, v}$ as well as radial ($k_{1, 2}$) and tangential ($p_{1, 2}$) lens distortion parameters (see: [ASP frame camera models](https://stereopipeline.readthedocs.io/en/latest/pinholemodels.html)).
-* [convert ASP residual output files to GeoPackage (GPKG) for plotting with GIS packages](https://github.com/mstudinger/ATM-SfM-Bathymetry/blob/main/Python/convert_asp_residual_output_to_gpkg.py)
+* [Convert ASP residual output files to GeoPackage (GPKG) for plotting with GIS packages](https://github.com/mstudinger/ATM-SfM-Bathymetry/blob/main/Python/convert_asp_residual_output_to_gpkg.py)
 ___
 
 **Recommended resources:**
