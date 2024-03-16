@@ -7,6 +7,7 @@ __pycache__/
 develop/
 Jupyter/CAMBOTv2_convert_GPS_to_camera_pos_develop.ipynb
 data/nav/IOCAM0_2019_GR_NASA_20190906_camera_positions.csv
+data/example_files/asp_ba_out-final_residuals_pointmap.gpkg
 
 # C extensions
 *.so
