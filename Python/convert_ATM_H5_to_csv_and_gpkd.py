@@ -3,9 +3,21 @@
 Created on Sat Mar 16, 2024
 
 @author: Michael Studinger, NASA - Goddard Space Flight Center
+
+This Python™ function/script is designed to work with these two NASA data products:
+https://nsidc.org/data/ilatm1b/versions/2
+https://nsidc.org/data/ilnsa1b/versions/2
+
+The code reads the following four fields from the ATM ilatm1b and ilnsa1b HDF5 files:
+    
+/longitude: laser spot longitude in degrees east
+/latitude:  laser spot latitude in degrees north
+/elevation: elevation of the laser spot above ellipsoid in meters
+/instrument_parameters/rcv_sigstr: Received Laser Signal Strength (relative). This is the sum taken over the received pulse of the waveform samples in units of digitizer counts.
+
 """
 
-# Received Laser Signal Strength (relative). This is the sum taken over the received pulse of the waveform samples in units of digitizer counts.
+#%% import required modules
 
 import h5py
 import time
@@ -13,9 +25,7 @@ import numpy as np
 import pandas as pd
 import geopandas as gpd
 
-# this Python™ function/script is designed to work with these two NASA data products:
-# https://nsidc.org/data/ilatm1b/versions/2
-# https://nsidc.org/data/ilnsa1b/versions/2
+#%% define function for reading and converting ATM NSIDC data products in HDF5 format
     
 def convert_atm_H5_to_csv_and_gpkg(
     f_name_atm:str,   # path to ATM point cloud lidar file in HDF5 format
