@@ -5,7 +5,7 @@ Created on Sat Mar 16, 2024
 @author: Michael Studinger, NASA - Goddard Space Flight Center
 """
 
-# Received Laser Signal Strength (relative).  This is the sum taken over the received pulse of the waveform samples in units of digitizer counts.
+# Received Laser Signal Strength (relative). This is the sum taken over the received pulse of the waveform samples in units of digitizer counts.
 
 import h5py
 import time
@@ -68,18 +68,18 @@ def convert_atm_H5_to_csv_and_gpkg(
     # save GeoPackage (GPKG) file with geographic coordinates if desired   
     if EXPORT_GIS:
         
-        # wrap longitudes to ±180° for GeoPackage (GPKG) export with geographic coordinates
+        # wrap longitudes to ±180° for GeoPackage (GPKG) export with geographic coordinates. 0°-360° is not supported.
         atm_df['lon_deg'] = np.mod(atm_df['lon_deg'] - 180.0, 360.0) - 180.0 
         
         # populate GeoDataFrame
         atm_gdf = gpd.GeoDataFrame(atm_df, geometry=gpd.points_from_xy(atm_df['lon_deg'], atm_df['lat_deg']))
     
-        # remove latitude and longitude colums since they are stored in geometry -> smaller files = faster load in QGIS
+        # remove redundant latitude and longitude columns since coordinates are stored in geometry -> smaller files = faster load in QGIS
         atm_gdf = atm_gdf.drop(columns=['lon_deg'])
         atm_gdf = atm_gdf.drop(columns=['lat_deg'])
         
         # set up the WGS-84 geographic coordinate system
-        atm_gdf = atm_gdf.set_crs("EPSG:4326") # need to wrap longitudes to ±180° for geopgraphic coordinates
+        atm_gdf = atm_gdf.set_crs("EPSG:4326") # need to wrap longitudes to ±180° for geopgraphic coordinates. 0°-360° is not supported.
         
         # save GeoPackage (GPKG) file    
         tic = time.perf_counter()
