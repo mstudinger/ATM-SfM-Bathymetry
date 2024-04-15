@@ -12,12 +12,12 @@ __*The repository is within the spirit of NASA's Transform to Open Science ([TOP
 * [Known challenges for SfM for supraglacial hydrology](https://github.com/mstudinger/ATM-SfM-Bathymetry/blob/main/Jupyter/SfM_supraglacial_hydrology_known_challenges.ipynb): Notebook illustrating known challenges for SfM for supraglacial hydrology, such as caustic and lake ice cover.
 
 **Python™ code currently available in this repository (more to come):**
-* [Parse ASP camera calibration files using the TSAI distortion model](https://github.com/mstudinger/ATM-SfM-Bathymetry/blob/main/Python/parse_ASP_TSAI_camera_calibration_files.py) and extract intrinsic parameters, such as focal lengths $f_{u, v}$ , radial ($k_{1, 2}$) and tangential  lens distortion parameters ($p_{1, 2}$) , as well as extrinsic parameters such as camera pose (see: [ASP frame camera models](https://stereopipeline.readthedocs.io/en/latest/pinholemodels.html)).
+* [Parse ASP camera calibration files using the TSAI distortion model](https://github.com/mstudinger/ATM-SfM-Bathymetry/blob/main/Python/parse_ASP_TSAI_camera_calibration_files.py) and extract intrinsic parameters, such as focal lengths $f_{u, v}$ , radial ($k_{1, 2, 3}$) and tangential  lens distortion parameters ($p_{1, 2}$) , as well as extrinsic parameters such as camera pose (see: [ASP frame camera models](https://stereopipeline.readthedocs.io/en/latest/pinholemodels.html)).
 * [Convert ASP residual output files to GeoPackage (GPKG) for plotting with GIS packages](https://github.com/mstudinger/ATM-SfM-Bathymetry/blob/main/Python/convert_asp_residual_output_to_gpkg.py)
 * [Convert ATM HDF5 lidar point clouds](https://github.com/mstudinger/ATM-SfM-Bathymetry/blob/main/Python/convert_ATM_H5_to_csv_and_gpkd.py): convert ATM HDF5 lidar point clouds to ASCII CSV or GeoPackage (GPKG) for plotting with GIS packages.
 
 **Notebooks and repositories related to this project:**  
-[C. Wayne Wright's](https://github.com/lidar532) [lidar review tools](https://lidar532.github.io/lidar_review_tools/) using ATM supraglacial lake data as example:
+[Lidar review tools](https://lidar532.github.io/lidar_review_tools/) from [C. Wayne Wright](https://github.com/lidar532) using ATM supraglacial lake data as example:
 * [Lake surface detection](https://lidar532.github.io/lidar_review_tools/detect_lidar_water_surface.html)
 * [Interactive Bokeh plots of lake surface](https://lidar532.github.io/lidar_review_tools/ww_bokeh.html)
 ___
