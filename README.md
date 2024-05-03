@@ -15,6 +15,7 @@ __*The repository is within the spirit of NASA's Transform to Open Science ([TOP
 * [Parse ASP camera calibration files using the TSAI distortion model](https://github.com/mstudinger/ATM-SfM-Bathymetry/blob/main/Python/parse_ASP_TSAI_camera_calibration_files.py) and extract intrinsic parameters, such as focal lengths $f_{u, v}$ , radial ($k_{1, 2, 3}$) and tangential  lens distortion parameters ($p_{1, 2}$) , as well as extrinsic parameters such as camera pose (see: [ASP frame camera models](https://stereopipeline.readthedocs.io/en/latest/pinholemodels.html)).
 * [Convert ASP residual output files to GeoPackage (GPKG) for plotting with GIS packages](https://github.com/mstudinger/ATM-SfM-Bathymetry/blob/main/Python/convert_asp_residual_output_to_gpkg.py)
 * [Convert ATM HDF5 lidar point clouds](https://github.com/mstudinger/ATM-SfM-Bathymetry/blob/main/Python/convert_ATM_H5_to_csv_and_gpkd.py): convert ATM HDF5 lidar point clouds to ASCII CSV or GeoPackage (GPKG) for plotting with GIS packages.
+*  [Calculate the index of refraction of water depending on temperature, wavelength, and salinity](https://github.com/mstudinger/ATM-SfM-Bathymetry/blob/main/Python/calc_refractive_index_of_water.py) using [Christopher Parrish's (2020) empirical model](https://research.engr.oregonstate.edu/parrish/index-refraction-seawater-and-freshwater-function-wavelength-and-temperature)
 
 **Notebooks and repositories related to this project:**  
 [Lidar review tools](https://lidar532.github.io/lidar_review_tools/) from [C. Wayne Wright](https://github.com/lidar532) using ATM supraglacial lake data as example:
@@ -27,6 +28,7 @@ ___
 * [Ames Stereo Pipeline user group & support forum](https://groups.google.com/forum/#!forum/ames-stereo-pipeline-support)
 * [Jupyter-ready docker image with ASP pre-installed](https://github.com/uw-cryo/asp-binder) from the [University of Washington Terrain Analysis and Cryosphere Observation Lab](https://github.com/uw-cryo)
 * [Ames Stereo Pipeline tutorials](https://github.com/uw-cryo/asp_tutorials) from the [University of Washington Terrain Analysis and Cryosphere Observation Lab](https://github.com/uw-cryo)
+*  [Christopher Parrish's (2020) empirical model for calculating the refractive index of water](https://research.engr.oregonstate.edu/parrish/index-refraction-seawater-and-freshwater-function-wavelength-and-temperature)
 
 **Publications relevant to the Structure from Motion (SfM) Bathymetry repository:**
 * Beyer, R. A., Alexandrov, O., and McMichael, S.: The Ames Stereo Pipeline: NASA’s Open Source Software for Deriving and Processing Terrain Data, Earth and Space Science, 5, 537–548, https://doi.org/10.1029/2018EA000409, 2018.
