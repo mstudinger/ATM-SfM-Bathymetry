@@ -6,10 +6,12 @@ __pycache__/
 # local repo files and folder to ignore
 develop/
 Jupyter/CAMBOTv2_convert_GPS_to_camera_pos_develop.ipynb
+Jupyter/archive/
 data/nav/IOCAM0_2019_GR_NASA_20190906_camera_positions.csv
 data/example_files/asp_ba_out-final_residuals_pointmap.gpkg
 data/example_files/ILATM1B_20190506_131600.ATM6AT6.csv
 data/example_files/ILATM1B_20190506_131600.ATM6AT6.gpkg
+
 
 # C extensions
 *.so
