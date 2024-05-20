@@ -13,10 +13,10 @@ To import user-defined modules that are not located in the same folder as the ma
 
 usage in code:
     import atm_utilities
-    atm_utilities.aux_reader() # for function call
+    df, header_data, lever_arm_sensor = atm_utilities.aux_reader(f_name_aux) # for function call
 or
-    from asp_airborne_utilities import search_temporal, aux_reader  # list required functions separated by commas
-    indx_time, indx_list_time = search_temporal(posix_utc,t_s,t_e)  # for function call
+    from asp_airborne_utilities import df_temporal_search, aux_reader  # list required functions separated by commas
+    result_df_temporal_search = df_temporal_search(aux_df,t_s,t_e,*args)  # for function call
 
 """
 
@@ -37,17 +37,17 @@ def aux_reader(f_name_aux):
     Usage  : df, header_data, lever_arm_sensor = aux_reader(f_name_aux)
 
     INPUT:
-    f_name_ax : string or Path object
+    f_name_aux : string
         file name with location of ATM AUX file to be read 
 
     OUTPUT:
-    df: DataFram
+    df: DataFrame
         DataFrame with data from ATM AUX file
     header_data: class
-        header parameter extracted from ATM AUX file
+        header parameters extracted from ATM AUX file
     lever_arm_sensor: array
         lever arm from GPS antenna phase center to the camera focal plane.
-        for definition of lever am see header of ATM AUX file.
+        for definition of lever arm see header of ATM AUX file.
     """
 
     # load the required modules
@@ -225,8 +225,9 @@ def iso2epoch(date_str):
 
 def df_temporal_search(aux_df,t_s,t_e,*args):
     """
-    Summary: locate UTC image timetags in POSIX timetag array that match temporal search criteria
-    Usage  : result_df_temporal_search = df_temporal_search(aux_df,t_s,t_e,*args)
+    Summary     : locate UTC image timetags in POSIX timetag array that match temporal search criteria
+    Usage       : result_df_temporal_search = df_temporal_search(aux_df,t_s,t_e,*args)
+    Dependencies: iso2epoch from this module
     
     INPUT:
     aux_df : DataFrame created from ATM AUX file with function aux_reader()
@@ -257,33 +258,6 @@ def df_temporal_search(aux_df,t_s,t_e,*args):
     else:
         raise ValueError("\n\tERROR: input variable aux_df must be a DataFrame created with function aux_reader(). Abort.")
 
-    # helper function to convert UTC date string in ISO 8601 standard format to
-    # epoch seconds a.k.a. POSIX time
-    # -------------------------------------------------------------------------
-    def iso2epoch(date_str):
-        """
-        converts single UTC date string in ISO 8601 standard format (2019-05-12T16:10:40.5) 
-        to epoch seconds a.k.a. POSIX time, defined as number of non-leap seconds 
-        which have passed since 00:00:00 UTC on Thursday, January 1, 1970
-        see: https://en.wikipedia.org/wiki/Unix_time
-        
-        Note: conversion must use an "aware" datetime object with the time zone defined (tzinfo=timezone.utc)
-              using "naive" datetime objects without timezone information results in 
-              conversion errors depending on the local time zone of the computer
-        """
-        
-        from datetime import datetime
-        from datetime import timezone
-        
-        if isinstance(date_str, str):    
-            str_to_convert_dt = datetime.strptime(date_str.strip(),"%Y-%m-%dT%H:%M:%S.%f").replace(tzinfo=timezone.utc)
-            epoch_sec = str_to_convert_dt.timestamp() # convert to epoch seconds
-        else:    
-            print("Error: input argument must be a string in ISO 8601 standard format (2019-05-12T16:10:40.5)")
-        
-        return epoch_sec
-    # -------------------------------------------------------------------------    
-
     t_s_posix = iso2epoch(t_s.strip()) # remove any white spaces at beginning or end
     t_e_posix = iso2epoch(t_e.strip())
 
@@ -292,7 +266,7 @@ def df_temporal_search(aux_df,t_s,t_e,*args):
     # find indices where indx_time is True
     indx_list_temporal = [i for i, x in enumerate(indx_inside_window) if x]
     
-    #verify that posix_utc time tags are increasing (is much faster than using diff apparently)
+    # verify that posix_utc time tags are increasing (is much faster than using diff apparently)
     if (np.all(posix_utc[1:] >= posix_utc[:-1])) == True:
         indx_s = indx_list_temporal[0]
         indx_e = indx_list_temporal[-1]
@@ -305,7 +279,7 @@ def df_temporal_search(aux_df,t_s,t_e,*args):
             self.indx_inside_window  = None # boolean array with False outside the time window and True inside. same length as DataFrame
             self.indx_list_temporal  = None # list with indices of data points inside the time window
             self.indx_s              = None # first index of indx_list_spatial: indx_s = indx_list_temporal[0]
-            self.indx_e              = None # last index of indx_list_spatial: indx_e = indx_list_temporal[-1]
+            self.indx_e              = None # last index of indx_list_spatial : indx_e = indx_list_temporal[-1]
             self.t_s_str             = None # time tag as type str of start of search window
             self.t_e_str             = None # time tag as type str of edn of search window
     
@@ -337,7 +311,7 @@ def df_spatial_search(aux_df,search_poly,*args):
         input must be a Pandas DataFrame with specific column names/order created by aux_reader()
     search_poly: TYPE
         closed search polygon for spatial search in geographic coordinates
-        can be a) DataFrame or b) shapely Polygon object or c) n x 2 array
+        can be a) DataFrame or b) shapely Polygon object or c) n x 2 array (not yet implemented)
     *args: bool
         optional input argument to display corresponding time window for spatial search results
 
@@ -349,8 +323,6 @@ def df_spatial_search(aux_df,search_poly,*args):
     import sys
     import numpy as np
     from shapely import geometry
-    #from shapely.geometry import Point, Polygon
-
     
     # check for optional input arguments to display corresponding time window
     VERBOSE = False
@@ -389,9 +361,8 @@ def df_spatial_search(aux_df,search_poly,*args):
     indx_list_spatial = [i for i, x in enumerate(indx_inside_poly) if x]
     
     if VERBOSE:
-        posix_utc = np.asarray(aux_df['PosixTime_UTC'])
-        
-        #verify that posix_utc time tags are increasing (is much faster than using diff apparently)
+        posix_utc = np.asarray(aux_df['PosixTime_UTC'])        
+        # verify that posix_utc time tags are increasing (is much faster than using diff apparently)
         if (np.all(posix_utc[1:] >= posix_utc[:-1])) == True:
             indx_s = indx_list_spatial[0]
             indx_e = indx_list_spatial[-1]
