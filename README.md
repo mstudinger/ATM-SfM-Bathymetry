@@ -3,6 +3,11 @@ This repository contains tools for deriving supraglacial lake bathymetry from NA
 
 >__*This repository is within the spirit of NASA's Transform to Open Science ([TOPS](https://nasa.github.io/Transform-to-Open-Science/)) program with the goal of transforming communities to an inclusive culture of open science.*__
 
+>[!NOTE]
+>**Upcoming**: Poster presentation at AGU's Annual Meeting 2024 in Washington, DC.: [Linkt to AGU abstract](https://agu.confex.com/agu/agu24/meetingapp.cgi/Paper/1528333)
+
+
+
 **Jupyter notebooks currently available in this repository (more to come):**  
 * **Tutorial:** [Step 1: Automatic detection of supraglacial lakes and surface classification](https://github.com/mstudinger/ATM-SfM-Bathymetry/blob/main/Jupyter/CAMBOTv2_lake_detection_using_NDWI_and_Otsu_thresholding.ipynb) using classic image segmentation methods such as [Otsu](https://doi.org/10.1109/TSMC.1979.4310076) multi-thresholding and Connected Component Analysis (CCA) on both natural-color imagery and NDWI<sub>ice</sub>.  
 * **Tutorial:** [Step 2: Automatic detection of supraglacial lakes](https://github.com/mstudinger/ATM-SfM-Bathymetry/blob/main/Jupyter/CAMBOT_v2_lake_detection_using_SAM.ipynb) using the AI-based Segment Anything Model (SAM) ([Kirillov, A. et al., 2023](http://arxiv.org/abs/2304.02643)).  
