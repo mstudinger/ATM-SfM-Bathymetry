@@ -1,4 +1,4 @@
-# <div align="center">Structure from Motion (SfM) Bathymetry</div>
+# <div align="center">Bathymetry of supraglacial lakes and streams on the Greenland Ice Sheet from high-resolution aerial photography</div>
 This repository contains tools for deriving supraglacial lake bathymetry from NASA's Airborne Topographic Mapper (ATM) aerial imagery using NASA's Ames Stereo Pipeline ([ASP](https://stereopipeline.readthedocs.io/en/latest/index.html)), a suite of free and open source, automated geodesy and stereogrammetry tools. The repository is comprised of Jupyter notebooks, Python™ code and data files with the intention of publicly sharing tools and results as the project evolves. It is a living repository intended to invite people to contribute and comment and use the tools that are being developed.
 
 >__*This repository is within the spirit of NASA's Transform to Open Science ([TOPS](https://nasa.github.io/Transform-to-Open-Science/)) program with the goal of transforming communities to an inclusive culture of open science.*__
