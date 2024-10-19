@@ -172,7 +172,7 @@ def aux_reader(f_name_aux):
     df = pd.read_csv(f_name_aux, skiprows=header_data.data_start_row, names=header_data.headers)
  
     # some AUX files contain lon and lat at the beginning of the file that are zero. To remove them use:
-    df = df.drop(df[np.abs(df.iloc[:, 3]) <= 0.5].index) # this nicely works for the WFF flight
+    df = df.drop(df[np.abs(df.iloc[:, 3]) <= 0.5].index) # tested with WFF and other flights
     
     # NOTE: the column names for non-NSIDC data can be different from the NSIDC files
     # make consistent column labels to eliminate inconsisteny in the different input formats
@@ -298,7 +298,7 @@ def df_temporal_search(aux_df,t_s,t_e,*args):
     
 #%% helper function definition
 # =============================================================================
-# spatial search inside a polygon (as shapely object )
+# spatial search inside a polygon (provided as shapely object or DataFrame)
 # =============================================================================
 
 def df_spatial_search(aux_df,search_poly,*args):
