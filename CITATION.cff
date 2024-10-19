@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "If you use information from this repository, please cite it as below."
+authors:
+- family-names: "Studinger"
+  given-names: "Michael"
+  orcid: "https://orcid.org/0000-0003-1265-4741"
+- family-names: "Wright"
+  given-names: "C. Wayne"
+- family-names: "Alexandrov"
+  given-names: "Oleg"
+title: "Bathymetry of supraglacial lakes and streams on the Greenland Ice Sheet from high-resolution aerial photography"
+version: 1.0
+date-released: 2024-02-13
+url: "https://github.com/mstudinger/ATM-SfM-Bathymetry"
