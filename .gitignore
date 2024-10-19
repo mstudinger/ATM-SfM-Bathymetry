@@ -3,7 +3,7 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-# local repo files and folder to ignore
+# local files and folders in repository to ignore for tracking
 develop/
 Jupyter/CAMBOTv2_convert_GPS_to_camera_pos_develop.ipynb
 Jupyter/archive/
