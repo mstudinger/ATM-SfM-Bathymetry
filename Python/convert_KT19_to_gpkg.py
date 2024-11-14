@@ -26,16 +26,17 @@ import pandas as pd
 import geopandas as gpd
 from   asp_airborne_utilities import kt19_to_datetime
 
-#%% function to import KT19 ASCII file, convert to GeoDataFrame and export as GeoPackage (GPKG) file if desired
+#%% function to import KT19 ASCII file from NSIDC, convert to GeoDataFrame 
+#   and export as GeoPackage (GPKG) file if desired
 
 def kt19_to_gdf(
     f_name_kt19_inp:str,    # path to KT19 ASCII text file from NSIDC
-    EXPORT_GIS:bool,        # if True = GPKG output
+    EXPORT_GIS:bool,        # GeoPackage (GPKG) file if True
     ):      
 
     """
       read KT19 ASCII data file, convert it to GeoDataFrame, and save data as 
-      GeoPackage (GPKG) file for plotting with GIS software if desired.
+      GeoPackage (GPKG) file if desired.
     """
 
     try:
