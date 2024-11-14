@@ -403,3 +403,36 @@ def df_spatial_search(aux_df,search_poly,*args):
     result_df_spatial_search.t_e_str            = t_e_str
     
     return result_df_spatial_search
+
+# =============================================================================
+# convert YR, DOY, SOD -> datetime object
+# =============================================================================
+
+from datetime import datetime
+from datetime import timedelta
+
+def kt19_to_datetime(yr, doy, sod, utc_offset):
+    """
+    input : YYYY, DOY, SOC_GPS, UTC_TO_GPS_OFFSET
+    output: datetime object referenced to UTC
+    NOTE  : assumes 10 Hz is the highest rate used in gitar derived trajectories
+            this function is based on code from Matt Linkswiler with some improvements
+    """
+    yr   = int(yr)         # YYYY
+    doy  = int(doy)        # DOY
+    utc  = int(utc_offset) # UTC_TO_GPS_OFFSET
+
+    # extract seconds and fraction of seconds and convert them to microseconds for datetime
+    sod_gps, fff = divmod(sod, 1.0)   # note: sod >= 86400 is properly mapped into next day 
+    # now convert fraction of seconds to microseconds (should be an integer for 10 Hz data)
+    us = int(1000000 * round(fff, 1)) # rounding to 0.1 avoids numerical noise in divmod, but assumes max 10 Hz for gitar data 
+     
+    sod_utc = sod_gps - utc    # subtract UTC_TO_GPS_OFFSET from GPS to get UTC time base (only needed when processing GITAR data)
+
+    dt = datetime(yr, 1, 1) + timedelta(doy - 1) + timedelta(seconds=sod_utc) + timedelta(microseconds=us)
+
+    # change "naive" object to timezone-aware object by adding UTC time zone
+    # note: DeprecationWarning: parsing timezone aware datetimes is deprecated; this will raise an error in the future
+    # dt = dt.replace(tzinfo=timezone.utc)
+
+    return dt
