@@ -35,6 +35,7 @@ ___
 **Recommended resources:**
 * [Ames Stereo Pipeline user manual](https://stereopipeline.readthedocs.io/en/latest/index.html)
 * [Ames Stereo Pipeline user group & support forum](https://groups.google.com/forum/#!forum/ames-stereo-pipeline-support)
+* [Ames Stereo Pipeline daily build](https://github.com/NeoGeographyToolkit/StereoPipeline/releases)
 * [Jupyter-ready docker image with ASP pre-installed](https://github.com/uw-cryo/asp-binder) from the [University of Washington Terrain Analysis and Cryosphere Observation Lab](https://github.com/uw-cryo)
 * [Ames Stereo Pipeline tutorials](https://github.com/uw-cryo/asp_tutorials) from the [University of Washington Terrain Analysis and Cryosphere Observation Lab](https://github.com/uw-cryo)
 *  [Christopher Parrish's (2020) empirical model for calculating the refractive index of water](https://research.engr.oregonstate.edu/parrish/index-refraction-seawater-and-freshwater-function-wavelength-and-temperature)
