@@ -6,7 +6,7 @@ This repository contains tools for deriving supraglacial lake bathymetry from NA
 
 >[!NOTE]
 >* **Surface Topography and Vegetation (STV) Community Meeting at NASA GSFC, October 2024:** [Poster](https://github.com/mstudinger/ATM-SfM-Bathymetry/blob/main/presentations/STV_Community_Meeting_GSFC_2024_Greenland_lake_bathymetry.svgz.pdf)  
->* **Poster presentation at AGU's Annual Meeting 2024** in Washington, DC.: [Poster]([https://github.com/mstudinger/ATM-SfM-Bathymetry/blob/main/presentations/AGU_Fall_Meeting_2024_Greenland_lake_bathymetry_poster_medium_res.pdf) [Linkt to AGU abstract](https://agu.confex.com/agu/agu24/meetingapp.cgi/Paper/1528333)  
+>* **Poster presentation at AGU's Annual Meeting 2024** in Washington, DC.: [Poster](https://github.com/mstudinger/ATM-SfM-Bathymetry/blob/main/presentations/AGU_Fall_Meeting_2024_Greenland_lake_bathymetry_poster_medium_res.pdf) [Linkt to AGU abstract](https://agu.confex.com/agu/agu24/meetingapp.cgi/Paper/1528333)  
 
 
 **Jupyter notebooks currently available in this repository (more to come):**  
