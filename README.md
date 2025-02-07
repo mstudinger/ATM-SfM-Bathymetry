@@ -2,8 +2,6 @@
 # <div align="center">Bathymetry of supraglacial lakes and streams on the Greenland Ice Sheet from high-resolution aerial photography</div>
 This repository contains tools for deriving supraglacial lake bathymetry from NASA's Airborne Topographic Mapper (ATM) aerial imagery using NASA's Ames Stereo Pipeline ([ASP](https://stereopipeline.readthedocs.io/en/latest/index.html)), a suite of free and open source, automated geodesy and stereogrammetry tools. The repository is comprised of Jupyter notebooks, Python™ code and data files with the intention of publicly sharing tools and results as the project evolves. It is a living repository intended to invite people to contribute and comment and use the tools that are being developed.
 
->__*This repository is within the spirit of NASA's Transform to Open Science ([TOPS](https://nasa.github.io/Transform-to-Open-Science/)) program with the goal of transforming communities to an inclusive culture of open science.*__
-
 >[!NOTE]
 >* **Surface Topography and Vegetation (STV) Community Meeting at NASA GSFC, October 2024:** [Poster](https://github.com/mstudinger/ATM-SfM-Bathymetry/blob/main/presentations/STV_Community_Meeting_GSFC_2024_Greenland_lake_bathymetry.svgz.pdf)  
 >* **Poster presentation at AGU's Annual Meeting 2024** in Washington, DC.: [Poster](https://github.com/mstudinger/ATM-SfM-Bathymetry/blob/main/presentations/AGU_Fall_Meeting_2024_Greenland_lake_bathymetry_poster_medium_res.pdf) [Linkt to AGU abstract](https://agu.confex.com/agu/agu24/meetingapp.cgi/Paper/1528333)  
