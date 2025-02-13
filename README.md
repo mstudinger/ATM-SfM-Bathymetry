@@ -22,7 +22,8 @@ This repository contains tools for deriving supraglacial lake bathymetry from NA
 * [Convert ASP residual output files to GeoPackage (GPKG) for plotting with GIS packages](https://github.com/mstudinger/ATM-SfM-Bathymetry/blob/main/Python/convert_asp_residual_output_to_gpkg.py)
 * [Convert ATM HDF5 lidar point clouds](https://github.com/mstudinger/ATM-SfM-Bathymetry/blob/main/Python/convert_ATM_H5_to_csv_and_gpkd.py): convert ATM HDF5 lidar point clouds to ASCII CSV or GeoPackage (GPKG) for plotting with GIS packages.
 * [Convert KT19 surface temperature measurements](https://github.com/mstudinger/ATM-SfM-Bathymetry/blob/main/Python/convert_KT19_to_gpkg.py): convert KT19 surface temperature measurements to GeoDataFrame and save as GeoPackage (GPKG).
-*  [Calculate the index of refraction of water depending on temperature, wavelength, and salinity](https://github.com/mstudinger/ATM-SfM-Bathymetry/blob/main/Python/calc_refractive_index_of_water.py) using [Christopher Parrish's (2020) empirical model](https://research.engr.oregonstate.edu/parrish/index-refraction-seawater-and-freshwater-function-wavelength-and-temperature)
+* [Calculate the index of refraction of water depending on temperature, wavelength, and salinity](https://github.com/mstudinger/ATM-SfM-Bathymetry/blob/main/Python/calc_refractive_index_of_water.py) using [Christopher Parrish's (2020) empirical model](https://research.engr.oregonstate.edu/parrish/index-refraction-seawater-and-freshwater-function-wavelength-and-temperature)
+* [Calculate NDWI<sub>ice</sub> from L1B georeferenced GeoTiff files and save NDWI<sub>ice</sub> as GeoTiff](https://github.com/mstudinger/ATM-SfM-Bathymetry/blob/main/Python/calculate_L1B_NDWI_geotiffs.py)
 ***
 **Notebooks and repositories related to this project:**  
 [Lidar review tools](https://lidar532.github.io/lidar_review_tools/) from [C. Wayne Wright](https://github.com/lidar532) using ATM supraglacial lake data as example:
