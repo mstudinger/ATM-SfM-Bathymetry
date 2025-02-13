@@ -76,11 +76,11 @@ list_of_files = []
 
 for r, d, f in os.walk(f_dir_L1b): 
         for file in sorted(f):
-            if (file.startswith(f_name_start) & file.endswith(".tif") & (file.count("ndwi") == 0)):
+            if (file.startswith(f_name_start) & file.endswith(".tif") & (file.count("ndwi") == 0) & (file.count(".tif_gray.tif") == 0)):
                 f_name_inp = f_dir_L1b + os.sep + file
                 f_name_out = f_dir_L1b + os.sep + file.replace(".tif","_ndwi.tif")
                 print(file)
-                list_of_files.append(file)
+                list_of_files.append(file.replace(".tif","_ndwi.tif"))
 
                 # load data into a DataArray
                 rgb = rioxarray.open_rasterio(f_name_inp, chunks=True, lock=False)
