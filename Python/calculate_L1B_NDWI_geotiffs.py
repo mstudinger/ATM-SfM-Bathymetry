@@ -1,10 +1,9 @@
 # -*- coding: utf-8 -*-
 """
 Created on Tue Feb 11, 2025
-
 @author: Michael Studinger, NASA - Goddard Space Flight Center
 
-This Python™ code is designed to work with the ATM L1B data product available at:
+This Python™ code is designed to work with the ATM CAMBOT L1B data product available at:
     
     https://nsidc.org/data/iocam1b/versions/2
     IceBridge CAMBOT L1B Geolocated Images, Version 2
@@ -13,12 +12,10 @@ This Python™ code is designed to work with the ATM L1B data product available 
 
 Purpose: create georeferenced NDWI_ice GeoTiff images from the above data product
     For information about the Normalized Difference Water Index modified for ice (NDWIice) see:
-    https://github.com/mstudinger/ATM-SfM-Bathymetry/blob/main/Jupyter/CAMBOTv2_lake_detection_using_NDWI_and_Otsu_thresholding.ipynb
-    
+    https://github.com/mstudinger/ATM-SfM-Bathymetry/blob/main/Jupyter/CAMBOTv2_lake_detection_using_NDWI_and_Otsu_thresholding.ipynb    
 """
 
 #%% load required modules
-
 import rioxarray# as rio
 import numpy as np
 import os
@@ -26,13 +23,10 @@ import os
 VERBOSE = False
 
 #%% set input and output files names
-
 f_dir_L1b   = r"CAMBOT_L1"
 f_name_list = f_dir_L1b + os.sep + "f_name_list_to_mosaic.txt" 
 
-
 #%% set file name prefix depening on files 
-
 #FILE_TYPE = "RAMP" # "NSIDC" or "RAMP"
 FILE_TYPE = "NSIDC" # or "RAMP"
 
@@ -68,10 +62,7 @@ def extract_band_from_GeoTiff(rgb_array, band1, band2):
     return d_array_out
 
 #%% make list with file names to convert
-
-# r = root, d = directories, f = files
-
-# start with empty list of file names
+# allocate empty list for file names to be processed with ASP's dem_mosaic 
 list_of_files = []
 
 for r, d, f in os.walk(f_dir_L1b): 
@@ -121,9 +112,7 @@ for r, d, f in os.walk(f_dir_L1b):
                 ndwi.rio.to_raster(f_name_out, dtype="float32", driver="GTiff", compress="LZW") 
 
 #%% save list with file names to use with ASP dem_mosaic
-
 f_obj = open(f_name_list, 'w',newline='\n') # use Unix-style LF end-of-line terminators from Windows
-
 for i in range(len(list_of_files)):
     f_obj.write(f'{list_of_files[i]:s}\n')
 f_obj.close()
