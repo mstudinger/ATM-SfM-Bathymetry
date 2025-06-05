@@ -12,7 +12,7 @@ and references therein
 
 April 29, 205: added Dietrich and Parrish, 2025 (https://doi.org/10.1029/2024EA004106)  
 
-@author: Michael Studiner, NASA Goddard Space Flight Center
+@author: Michael Studinger, NASA Goddard Space Flight Center
 """
 
 import os
