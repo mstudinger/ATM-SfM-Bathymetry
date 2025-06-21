@@ -1,15 +1,18 @@
 # -*- coding: utf-8 -*-
 """
-Created on Mon Dec 4, 2023
-Revised on Thu May 2, 2024
+Created on Mon Dec  4, 2023
+Revised on Thu May  2, 2024
+        on Tue Apr 29, 2025 added Dietrich and Parrish, 2025 (https://doi.org/10.1029/2024EA004106)
 
 Simple Python script for calculating the index of refraction using the empirical model from Christopher Parrish (2020):
 https://research.engr.oregonstate.edu/parrish/index-refraction-seawater-and-freshwater-function-wavelength-and-temperature
 and Richie Slocum:
 https://github.com/hokiespurs/water_ior
-and references therein  
+and references therein
 
-@author: Michael Studiner, NASA Goddard Space Flight Center
+April 29, 205: added Dietrich and Parrish, 2025 (https://doi.org/10.1029/2024EA004106)  
+
+@author: Michael Studinger, NASA Goddard Space Flight Center
 """
 
 import os
@@ -67,4 +70,17 @@ else:
 ior = a*temp**2 + b*wavelength**2 + c*temp + d*wavelength + e
 
 print(f'\n\tThe index of refraction of {water:s} at {temp:.1f}°C and {wavelength:d} nm is: {ior:.4f}')
+
+
+#%% Dietrich and Parrish, 2025 (https://doi.org/10.1029/2024EA004106) 
+# Development and Analysis of a Global Refractive Index of Water Data Layer for Spaceborne and Airborne Bathymetric Lidar
+
+# 532 nm (equation 15) note: temperature range can be 0°C to 40°C here 
+ 
+S = 0.1 # salinity in practical salinity units (PSU). Essentially, one PSU represents 1 gram of salt per 1000 grams of water fresh water 0.5
+
+nw_532 = S * (1.6E-8 * temp**2 - 1.05E-6 * temp + 1.99611E-4) - 2.02E-6 * temp**2 - 7.95113E-6 * temp + 1.336
+
+print(f'\n\tDietrich and Parrish 2025 for S = {S:.1f} PSU (practical salinity units)')
+print(f'\tThe index of refraction of {water:s} at {temp:.1f}°C and {wavelength:d} nm is: {nw_532:.4f}')
 
