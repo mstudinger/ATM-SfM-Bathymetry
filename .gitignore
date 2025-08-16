@@ -14,6 +14,8 @@ data/example_files/ILATM1B_20190506_131600.ATM6AT6.csv
 data/example_files/ILATM1B_20190506_131600.ATM6AT6.gpkg
 data/example_files/IAKST1B_KT19_PROCESSED_20190506_102239.gpkg
 archive_not_tracked/
+MERRA2/
+CAMBOT_L1B/
 
 # C extensions
 *.so
