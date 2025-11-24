@@ -6,6 +6,7 @@ __pycache__/
 # local files and folders in repository to ignore for tracking
 develop/
 Jupyter/CAMBOTv2_convert_GPS_to_camera_pos_develop.ipynb
+Jupyter/azimuth_of_true_north_in_xy_coords_and_map_plots_develop.ipynb
 Jupyter/archive/
 data/SAM/
 data/nav/IOCAM0_2019_GR_NASA_20190906_camera_positions.csv
